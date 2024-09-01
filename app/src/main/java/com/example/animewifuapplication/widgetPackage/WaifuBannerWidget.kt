@@ -1,5 +1,7 @@
 package com.example.animewifuapplication.widgetPackage
 
+
+
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
@@ -11,7 +13,7 @@ import android.widget.Toast
 import androidx.core.net.toUri
 import com.example.animewifuapplication.R
 
-class ImageBannerWidget : AppWidgetProvider() {
+class WaifuBannerWidget : AppWidgetProvider() {
 
     companion object {
         private const val TOAST_ACTION = "com.wiafu.widiget.TOAST_ACTION"
@@ -28,12 +30,12 @@ class ImageBannerWidget : AppWidgetProvider() {
                 data = this.toUri(Intent.URI_INTENT_SCHEME).toUri()
             }
 
-            val views = RemoteViews(context.packageName, R.layout.image_banner_widget).apply {
+            val views = RemoteViews(context.packageName, R.layout.new_app_widget).apply {
                 setRemoteAdapter(R.id.stack_view, intent)
                 setEmptyView(R.id.stack_view, R.id.empty_view)
             }
 
-            val toastIntent = Intent(context, ImageBannerWidget::class.java).apply {
+            val toastIntent = Intent(context, WaifuBannerWidget::class.java).apply {
                 action = TOAST_ACTION
                 putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId)
             }
