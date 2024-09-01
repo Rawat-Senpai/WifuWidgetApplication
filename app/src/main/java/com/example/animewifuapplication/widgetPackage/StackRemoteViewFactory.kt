@@ -10,6 +10,7 @@ import androidx.core.os.bundleOf
 import com.bumptech.glide.Glide
 import com.example.animewifuapplication.R
 import com.example.animewifuapplication.repository.AnimeRepository
+import com.example.animewifuapplication.utils.NetworkResult
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
@@ -33,8 +34,30 @@ internal class StackRemoteViewFactory @Inject constructor(@ApplicationContext pr
         widgetItem.clear()
 
         runBlocking {
-
             // get wify images
+
+            animeRepository.getWaifuPics("","")
+
+            val response = animeRepository.waifuPicResponse.value
+
+            if(response is NetworkResult.Success){
+
+                imageUrls.clear()
+                imageUrls.addAll(animeRepository.extractImageUrls(response.data))
+
+                widgetItem.clear()
+
+                imageUrls.forEach{url->
+
+                    val bitmap = getBitmapFromUrl(url)
+                    bitmap?.let {
+                        widgetItem.add(it)
+                    }
+
+                }
+
+            }
+
 
         }
 

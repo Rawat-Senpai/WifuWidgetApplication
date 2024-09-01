@@ -1,6 +1,5 @@
-package com.example.animewifuapplication.widgetPackage
+package com.example.animewifuapplication.utils
 
-import com.example.animewifuapplication.utils.NetworkResult
 import retrofit2.Response
 
 

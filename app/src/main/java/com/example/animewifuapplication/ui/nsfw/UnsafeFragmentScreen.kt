@@ -10,7 +10,6 @@ import com.example.animewifuapplication.R
 
 class UnsafeFragmentScreen : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
