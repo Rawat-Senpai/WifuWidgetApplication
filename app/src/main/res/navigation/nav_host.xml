@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/safeFragmentScreen">
+
+    <fragment
+        android:id="@+id/safeFragmentScreen"
+        android:name="com.example.animewifuapplication.ui.sfw.SafeFragmentScreen"
+        android:label="fragment_safe_screen"
+        tools:layout="@layout/fragment_safe_screen" />
+    <fragment
+        android:id="@+id/unsafeFragmentScreen"
+        android:name="com.example.animewifuapplication.ui.nsfw.UnsafeFragmentScreen"
+        android:label="fragment_unsafe_screen"
+        tools:layout="@layout/fragment_unsafe_screen" />
+</navigation>
