@@ -26,6 +26,7 @@ class StaggeredGridAdapter : ListAdapter<String, StaggeredGridAdapter.ViewHolder
             .load(item)
             // Use placeholder to avoid flickering
              // Use error image for handling load failures
+            
             .into(holder.imageView)
     }
 
